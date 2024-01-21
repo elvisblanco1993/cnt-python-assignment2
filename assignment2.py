@@ -17,10 +17,17 @@ class Assignment2:
         return anniversaries
 
     # Task 4
-    def modifyYear(self, n: int):
-        year_str = str(self.year)
-        modified_str = (year_str[:0] * n) + year_str[::2] * n
-        return modified_str
+    def modifyYear(self, n):
+        num = self.year
+        res = ""
+        arr = str(num)
+        for i in range(n):
+            res += arr[:2]
+        num = num * n
+        lst = str(num)
+        arr_temp = lst[::2]
+        res += arr_temp
+        return res        
 
     # Task 5
     @staticmethod
