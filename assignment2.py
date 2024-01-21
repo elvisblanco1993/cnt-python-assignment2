@@ -32,7 +32,15 @@ class Assignment2:
     # Task 5
     @staticmethod
     def checkGoodString(string):
-        return len(string) >= 9 and string[0].islower() and string.count('0') == 1 and string.isalnum()
+        if len(string) < 9:
+            return False
+        if not string[0].islower() or string[0] < 'a' or string[0] > 'z':
+            return False
+        count_numbers = sum(c.isdigit() for c in string)
+        if count_numbers == 1:
+            return True
+        else:
+            return False
 
     # Task 6
     @staticmethod
